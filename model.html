@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenhouse Gas Emissions Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/ghg_style.css">
+    <script type="module" src="https://embedding.tableauusercontent.com/tableau.embedding.3.1.0.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 header">
+                <img src="static/images/factory1.jpg" class="img-responsive mw-100 mh-100" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-inverse navbcolor">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.html">Home</a></li>
+                                <li class="active"><a href="#">Model</a></li>
+                                <li><a href="factors.html">Factors</a></li>
+                                <li><a href="usdata.html">USA</a></li>
+                                <li><a href="netzero.html">Net Zero</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center">Using Machine Learning to Predict Emissions</h3>
+                <p class="text-left">Climate Change data from World Bank database is used to analyze the factors that
+                    can
+                    influence greenhouse gas emissions.
+                    A hypothesis is formulated to test if CO<sub>2</sub> emissions depend on country-specific features
+                    available in
+                    the dataset and can be predicted from these. Two Machine Learning algorithms: Decision Tree
+                    Regressor and
+                    Random Forest Regressor
+                    models are built to predict CO<sub>2</sub>
+                    emissions from growth indicators like fossil usage, Gross Domestic Product (GDP) and population.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Decision Tree Regressor Metrics</div>
+                    <!-- Table -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>Root Mean Squared Error</td>
+                            <td>0.1442</td>
+                        </tr>
+                        <tr>
+                            <td>R-Squared</td>
+                            <td>0.9437</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Random Forest Regressor Metrics</div>
+                    <!-- Table -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>Root Mean Squared Error</td>
+                            <td>0.0355</td>
+                        </tr>
+                        <tr>
+                            <td>R-Squared</td>
+                            <td>0.9965</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h4 id="roundborder" class="text-center">
+                    <ul class="text-left">
+                        <li>
+                            Random Forest Regressor fits the data better than Decision Tree
+                            Regressor.</li>
+                        <li>The average error between the predictions and actuals in this dataset is 0.0355,
+                            which is likely a good value given that 1.36 (kt) is the average actual
+                            emissions per capita.
+                        </li>
+                        <li>In conclusion, Random Forest Regressor allows prediction of CO<sub>2</sub> emissions per
+                            capita from country specific indicators like electricity access percent, fossil usage, urban
+                            population and GDP. </li>
+                    </ul>
+
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Feature Importance Chart</div>
+
+                    <img src="static/images/feature_importances.png" class="img-responsive" width="500" height="700" />
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+
+        </div>
+        <footer class="container-fluid text-center">
+            <p class="text-uppercase text-muted text-center">presented by Elaine, LOIS, MIA, SATYA, SHILPA.</p>
+        </footer>
+</body>
+
+</html>
